@@ -1,51 +1,54 @@
 <div class="container mt-4" >
-  <div class="card">
-          <h1>Student Registation</h1>
+  <div class="card w-50">
+    <div class="d-flex justify-content-center mt-3 mb-2">
+        <h2>STUDENT REGISTRATION</h2>
+    </div>
 
   <form>
-      <div class="form-group">
+      <div class="form-group mx-5">
         <label>Student Name</label>
-        <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control" id="name" placeholder="Enter Name">
+        <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control mt-1 mb-2" id="name" placeholder="Enter Name">
       </div>
 
-      <div class="form-group">
-        <label>Birth Day</label>
-        <input type="text" [(ngModel)]="bday" [ngModelOptions]="{standalone: true}" class="form-control" id="bday" placeholder="Enter Birtday">
+      <div class="form-group mx-5">
+        <label>Birthday</label>
+        <input type="text" [(ngModel)]="bday" [ngModelOptions]="{standalone: true}" class="form-control mt-1 mb-2" id="bday" placeholder="Enter Birtday">
       </div>
 
-      <div class="form-group">
+      <div class="form-group mx-5">
           <label>Address</label>
-          <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control" id="address" placeholder="Enter Address">
+          <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control mt-1 mb-2" id="address" placeholder="Enter Address">
         </div>
 
-        <div class="form-group">
+        <div class="form-group mx-5">
           <label>Phone Number</label>
-          <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control" id="phone" placeholder="Enter Phone Number">
+          <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control mt-1 mb-2" id="phone" placeholder="Enter Phone Number">
         </div>
 
-        <div class="form-group">
+        <div class="form-group mx-5">
           <label>Email</label>
-          <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter Email">
+          <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control mt-1" id="email" placeholder="Enter Email">
         </div>
 
-
-
-      <button type="submit" class="btn btn-primary mt-4" (click)="save()" >Save</button>
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary mt-4 mb-3" (click)="save()" >Save</button>
+        </div>
 
     </form>
   </div>
+</div>
 
 
 
       <div class="container mt-4" >
-          <h1>Student Table</h1>
+          <h2>STUDENT LIST</h2>
       <table class="table">
           <thead>
            <h1 *ngIf="!isResultLoaded">Loading.................</h1>
           <tr>
               <th scope="col">ID</th>
               <th scope="col">Student Name</th>
-              <th scope="col">Birth Day</th>
+              <th scope="col">Birthday</th>
               <th scope="col">Address</th>
               <th scope="col">Phone Number</th>
               <th scope="col">Email</th>
@@ -60,7 +63,7 @@
               <td>{{StudentItem.phone }}</td>
               <td>{{StudentItem.email }}</td>
               <td>
-                <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>
+                <button type="button" class="btn btn-success mx-3" (click)="setUpdate(StudentItem)">Edit</button>
                 <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
               </td>
             </tr>
