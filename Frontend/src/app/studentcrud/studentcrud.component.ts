@@ -25,6 +25,8 @@ export class StudentcrudComponent {
   }
   ngOnInit(): void {
   }
+
+  //Get All Student List
   getAllStudent()
   {
     this.http.get("http://localhost:8070/api/student/")
@@ -52,6 +54,8 @@ export class StudentcrudComponent {
         this.getAllStudent();
     });
   }
+
+   //Update Student
   setUpdate(data: any)
   {
    this.name = data.name;
@@ -63,6 +67,7 @@ export class StudentcrudComponent {
    this.currentStudentID = data.id;
 
   }
+
   UpdateRecords()
   {
     let bodyData =
@@ -83,6 +88,7 @@ export class StudentcrudComponent {
     });
   }
 
+  //Save Student
   save()
   {
     if(this.currentStudentID == '')
@@ -94,6 +100,8 @@ export class StudentcrudComponent {
        this.UpdateRecords();
       }
   }
+
+  //Delete Student
   setDelete(data: any)
   {
     this.http.delete("http://localhost:8070/api/student/delete"+ "/"+ data.id).subscribe((resultData: any)=>
